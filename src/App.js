@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+import SearchBar from './components/SearchBar';
 import './App.css';
+import searchImages from './api';
 
 function App() {
+
+  const handleSubmit = (term) => {
+    searchImages(term);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+      <SearchBar onSubmit={handleSubmit}/>
+      </form>
     </div>
+    
   );
 }
 
